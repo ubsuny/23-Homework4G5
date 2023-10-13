@@ -35,3 +35,20 @@ def test_np_matrix_multiply():
 def test_matrix_multiply_einsum():
     result = matrix_multiply_einsum(A, B)
     assert np.array_equal(result, expected_product), "method 3 fails"
+
+# Print resulting matrices:
+print("Result of Manual Method:")
+print(C1)
+
+print("\nResult of NumPy Method:")
+print(C2)
+
+print("\nResult of EinSum Method:")
+print(C3)
+
+# Save the plot to a file
+plt.bar(method_list, time_list)
+plt.ylabel('Time (s)')
+plt.title('Execution Time of a Program Calculating Multiplication of two 3x3 Matrices')
+plt.savefig('output_plot.png')
+
