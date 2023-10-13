@@ -23,7 +23,8 @@ jobs:
         echo "numpy==1.21.0" > requirements.txt
         echo "matplotlib==3.4.2" >> requirements.txt
         pip install -r requirements.txt
-
+    - name: List directory contents  # Debugging step to see contents
+      run: ls -al
     - name: Run matrix multiplication tests, generate plot, and write to log
       run: python test_matrix_multiplication.py
 
