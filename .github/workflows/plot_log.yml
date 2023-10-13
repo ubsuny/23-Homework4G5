@@ -1,0 +1,37 @@
+name: Matrix Multiplication Test, Plot, and Log
+
+on:
+  push:
+    paths:
+      - 'test_matrix_multiplication.py'
+
+jobs:
+  test-and-plot:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        echo "numpy==1.21.0" > requirements.txt
+        echo "matplotlib==3.4.2" >> requirements.txt
+        pip install -r requirements.txt
+    - name: List directory contents  # Debugging step to see contents
+      run: ls -al
+    - name: Run matrix multiplication tests, generate plot, and write to log
+      run: python test_matrix_multiplication.py
+
+    - name: Upload plot and log as artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: results
+        path: |
+          multiplication_methods_comparison.png
+          execution_times.log
