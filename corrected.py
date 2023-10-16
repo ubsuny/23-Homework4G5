@@ -20,8 +20,18 @@ def matrix_multiply_einsum(A, B):
 
 
 # Test functions
-A = np.array([[200, 533, 233], [532, 332, 534], [6342, 4434, 3434]])
-B = np.array([[4454, 5545, 5456], [2423, 434, 345], [6434, 84, 344]])
+A = np.array([
+    [200, 533, 233],
+    [532, 332, 534],
+    [6342, 4434, 3434]
+])
+
+B = np.array([
+    [4454, 5545, 5456],
+    [2423, 434, 345],
+    [6434, 84, 344]
+])
+
 expected_product = np.array([
     [3681381, 1359894, 1355237],
     [6609720, 3138884, 3200828],
@@ -31,23 +41,32 @@ expected_product = np.array([
 
 def test_matrix_multiply_manual():
     result = matrix_multiply_manual(A, B)
+    error_message = (
+        f"Method 1 (Manual) fails\nExpected:\n{expected_product}\nGot:\n{result}"
+    )
     print("Method 1 (Manual) Result:")
     print(result)
-    assert np.array_equal(result, expected_product), f"Method 1 (Manual) fails\nExpected:\n{expected_product}\nGot:\n{result}"
+    assert np.array_equal(result, expected_product), error_message
 
 
 def test_np_matrix_multiply():
     result = np_matrix_multiply(A, B)
+    error_message = (
+        f"Method 2 (NumPy) fails\nExpected:\n{expected_product}\nGot:\n{result}"
+    )
     print("\nMethod 2 (NumPy) Result:")
     print(result)
-    assert np.array_equal(result, expected_product), f"Method 2 (NumPy) fails\nExpected:\n{expected_product}\nGot:\n{result}"
+    assert np.array_equal(result, expected_product), error_message
 
 
 def test_matrix_multiply_einsum():
     result = matrix_multiply_einsum(A, B)
+    error_message = (
+        f"Method 3 (EinSum) fails\nExpected:\n{expected_product}\nGot:\n{result}"
+    )
     print("\nMethod 3 (EinSum) Result:")
     print(result)
-    assert np.array_equal(result, expected_product), f"Method 3 (EinSum) fails\nExpected:\n{expected_product}\nGot:\n{result}"
+    assert np.array_equal(result, expected_product), error_message
 
 
 if __name__ == '__main__':
