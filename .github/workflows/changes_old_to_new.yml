@@ -1,0 +1,38 @@
+# Changes Made
+name: Changes Made on Old Python Code
+
+# Specify when the action should be triggered
+on:
+  # Trigger the action on push events
+  push:
+    # Only trigger the action when changes are made to the specified Python file
+    paths:
+      - 'plot_log_matrix_multiplication.py' # path for the updated Python file
+
+# Define the jobs to be executed
+jobs:
+  # Name of the job
+  compare_changes:
+    # Specify the type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Define the sequence of tasks (steps) to be executed as part of the job
+    steps:
+    # Step 1: Checkout the repository to access its contents
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Step 2: Compare the changes between the old version of the file and the new one
+    - name: Compare changes with old version
+      run: |
+        # Use the 'diff' command to compare the two files and redirect the output to 'changes.log'
+        diff old_file.py plot_log_matrix_multiplication.py > changes.log
+        # Display the contents of 'changes.log' in the action's log output
+        cat changes.log
+
+    # Step 3: Upload the generated 'changes.log' so it can be downloaded later
+    - name: Upload comparison report
+      uses: actions/upload-artifact@v2
+      with:
+        name: comparison-report
+        path: changes.log
