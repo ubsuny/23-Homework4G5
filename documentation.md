@@ -1,1 +1,20 @@
-#This is the documentation file for our project. Its under construction. 
+
+# Unit Test Result Using pytest
+============================= test session starts ==============================  
+          
+          platform linux -- Python 3.8.18, pytest-7.4.2, pluggy-1.3.0  
+          rootdir: /home/runner/work/23-Homework4G5/23-Homework4G5  
+          collected 3 items  
+          pytest_matrix_multiply.py ...                         [100%]  
+
+============================== 3 passed in 0.13s ===============================
+
+The above result indicates that 
+- the testing was performed on a Linux platform using Python 3.8.18 with pytest version 7.4.2.
+- the rootdir specifies the directory where our tests were run.
+- collected 3 items indicates that pytest found and ran 3 test functions or methods.
+- pytest_matrix_multiply.py ... shows that all three tests in the file pytest_matrix_multiply.py passed 
+    Note: (each . represents a passed test).
+- The summary 3 passed in 0.13s confirms that all 3 tests were successful and they ran in 0.13 seconds.
+
+So, it appears that pytest worked correctly, and all our tests passed successfully.
