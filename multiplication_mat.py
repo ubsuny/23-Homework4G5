@@ -41,7 +41,7 @@ with open('execution_times.log', 'w') as log_file:
         log_file.write(f"{name} Execution Time: {execution_time} seconds\n")
 
 # Plotting Results
-plt.bar(method_names, time_list)
-plt.ylabel('Time (s)')
-plt.title('Execution Time of Different Matrix Multiplication Methods')
-plt.savefig('multiplication_methods_comparison.png')
+# plt.bar(method_names, time_list)
+# plt.ylabel('Time (s)')
+# plt.title('Execution Time of Different Matrix Multiplication Methods')
+# plt.savefig('multiplication_methods_comparison.png')
