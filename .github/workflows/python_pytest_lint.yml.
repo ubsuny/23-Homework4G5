@@ -26,4 +26,4 @@ jobs: # what should we do when it is run
     - name: Run unit tests with pytest
       run: |
         pip install pytest
-        pytest matrix_multiplication.py
+        pytest unit_test_matrix_multiplication.py
