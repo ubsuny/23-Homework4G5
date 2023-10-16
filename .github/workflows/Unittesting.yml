@@ -22,4 +22,4 @@ jobs: # what should we do when it is run
     - name: List directory contents  # Debugging step to see contents
       run: ls -al
     - name: Test with pytest
-      run: pytest multiplication_mat.py
+      run: python multiplication_mat.py
