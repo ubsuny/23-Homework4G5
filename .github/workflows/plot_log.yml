@@ -2,8 +2,8 @@ name: Matrix Multiplication Test, Plot, and Log
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'matrix_multiplications.py'
 
 jobs:
   test-and-plot:
@@ -33,5 +33,4 @@ jobs:
       with:
         name: results
         path: |
-          multiplication_methods_comparison.png
           execution_times.log
