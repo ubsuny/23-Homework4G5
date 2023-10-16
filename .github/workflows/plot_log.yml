@@ -3,7 +3,7 @@ name: Matrix Multiplication Test, Plot, and Log
 on:
   push:
     paths:
-      - 'plot_matrix_multiplication.py'
+      - 'plot_log_matrix_multiplication.py'
 
 jobs:
   test-and-plot:
@@ -26,7 +26,7 @@ jobs:
     - name: List directory contents  # Debugging step to see contents
       run: ls -al
     - name: Run matrix multiplication tests, generate plot, and write to log
-      run: python plot_matrix_multiplication.py
+      run: python plot_log_matrix_multiplication.py
 
     - name: Upload plot and log as artifacts
       uses: actions/upload-artifact@v2
