@@ -22,6 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         echo "numpy==1.21.0" > requirements.txt
         echo "matplotlib==3.4.2" >> requirements.txt
+        echo "pytest" >> requirements.txt  # Adding pytest here
         pip install -r requirements.txt
     - name: List directory contents  # Debugging step to see contents
       run: ls -al
