@@ -1,0 +1,57 @@
+name: Python Test and Lint Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run pytest for ab.py
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: List all files and directories
+      run: ls -al
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest numpy
+        # Include any other dependencies your code might have
+
+    - name: Run tests for ab.py
+      run: pytest ab.py  # Assuming tests for ab.py are in test_ab.py
+
+  lint:
+    name: Lint ab.py with flake8
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: List all files and directories
+      run: ls -al
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8
+
+    - name: Lint ab.py with flake8
+      run: flake8 ab.py  # Specifically linting ab.py
