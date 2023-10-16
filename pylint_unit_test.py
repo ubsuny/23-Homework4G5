@@ -1,10 +1,10 @@
 """
-This module performs matrix multiplication using various methods and tests their correctness and performance.
+This module performs matrix multiplication using various methods and 
+tests their correctness and performance.
 """
 
 import time
 import numpy as np
-import pytest
 
 # List to store the names of methods used and execution time for each method
 METHOD_LIST = ["For Loops", "NumPy", "EinSum"]
