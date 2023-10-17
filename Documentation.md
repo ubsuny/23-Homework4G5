@@ -38,7 +38,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v}
 ```
-
+Your new GitHub Actions workflow file is now installed in your repository and will run automatically each time someone pushes a change to the repository.
 
 
 ----> Commit these changes and push them to your GitHub repository.
@@ -46,6 +46,10 @@ jobs:
 
 
 # Understanding the workflow file
+```name: learn-github-actions```
+Optional - The name of the workflow as it will appear in the "Actions" tab of the GitHub repository. If this field is omitted, the name of the workflow file will be used instead.
+```run-name: ${{ github.actor }} is learning GitHub Actions```
+
 # References.
 [1]
 [2]
