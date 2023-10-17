@@ -1,4 +1,4 @@
-name: Generate Change Log Old to New
+name: Generate Change Log
 
 on: 
   push:
@@ -11,14 +11,14 @@ jobs:
 
     steps:
     - name: Checkout Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Compare Files and Save to Log
       run: |
         diff old_file.py plot_log_matrix_multiplication.py > changes.log
 
     - name: Upload changes.log as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: changes-log
         path: changes.log
