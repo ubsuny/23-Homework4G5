@@ -36,6 +36,7 @@ with open('execution_times.log', 'w') as log_file:
         end_time = time.time()
         execution_time = end_time - start_time
         time_list.append(execution_time)
+        print(f"{name} Execution Time: {execution_time} seconds")  # This line prints the execution time
         
         # Write execution time to log file
         log_file.write(f"{name} Execution Time: {execution_time} seconds\n")
