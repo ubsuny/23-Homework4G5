@@ -1,5 +1,5 @@
 numpy
 matplotlib
-flake8
 pytest
+pylint
  run %pip,  do it in the action work flow. 
