@@ -1,12 +1,18 @@
-                              # Documentation for the project/ Github action.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Documentation for the project/ Github action.
+
 GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production
 GitHub provides Linux, Windows, and macOS virtual machines to run your workflows, or you can host your own self-hosted runners in your own data center or cloud infrastructure.
 There are different components in the github action, 
-#The components of GitHub Actions
+# The components of GitHub Actions
 You can configure a GitHub Actions workflow to be triggered when an event occurs in your repository, such as a pull request being opened or an issue being created. Your workflow contains one or more jobs which can run in sequential order or in parallel. Each job will run inside its own virtual machine runner, or inside a container, and has one or more steps that either run a script that you define or run an action, which is a reusable extension that can simplify your workflow.
 <img width="682" alt="Screenshot 2023-10-13 at 5 34 06 PM" src="https://github.com/ubsuny/23-Homework4G5/assets/13534352/3143d8c1-3279-451a-a458-907215eced8b">
-
+#  Workflows
+# Events
+# Jobs
+# Actions
+# Runners
+# Create an example workflow
+# Understanding the workflow file
 
 
 
