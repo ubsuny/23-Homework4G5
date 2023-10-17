@@ -24,7 +24,7 @@ You can create an example workflow in your repository that automatically trigger
 ---->In your repository, create the .github/workflows/ directory to store your workflow files.
 ----> In the .github/workflows/ directory, create a new file called learn-github-actions.yml and add the following code.
 # code is,
-'''
+```
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
@@ -38,7 +38,7 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
-      '''
+     ```
 ----> Commit these changes and push them to your GitHub repository.
 
 
