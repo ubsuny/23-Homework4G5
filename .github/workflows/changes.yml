@@ -1,24 +1,20 @@
-name: Generate Change Log
+name: Generate Diff Workflow
 
-on: 
-  push:
-    paths:
-      - '**.py' 
+on: [push]
 
 jobs:
-  generate-log:
+  generate-diff:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-
-    - name: Compare Files and Save to Log
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Create a diff file
       run: |
-        diff old_file.py plot_log_matrix_multiplication.py > changes.log
+        diff old_file.py plot_log_matrix_multiplication.py > changes.diff || true  # We add `|| true` to ensure that the workflow doesn't fail if there's a diff
 
-    - name: Upload changes.log as artifact
-      uses: actions/upload-artifact@v4
+    - name: Upload changes.diff as artifact
+      uses: actions/upload-artifact@v2
       with:
-        name: changes-log
-        path: changes.log
+        name: code-diff
+        path: changes.diff
