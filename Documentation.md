@@ -74,14 +74,7 @@ The run keyword tells the job to execute a command on the runner. In this case, 
 ```- run: bats -v```
 Finally, you'll run the bats command with a parameter that outputs the software version.
 # References.
-[1]
-[2]
-[3]
-[4]
-[5]
-[6]
-[7]
-[8]
-[9]
-[10]
-
+[1] https://assets.ctfassets.net/wfutmusr1t3h/6IyfnYAidl3QUoX2xfGOgI/6aa9e5df02378f952f7c1ba5f42effc9/What-is-GitHub.Actions_.Benefits-and-examples.pdf
+[2] https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks
+[3] https://www.harness.io/blog/github-actions
+[4] https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#overview
