@@ -29,7 +29,8 @@ jobs:
         # Upgrade pip to the latest version
         python -m pip install --upgrade pip
         # Install necessary libraries for the Python code and pylint
-        pip install numpy pytest pylint
+        # pip install numpy pytest pylint
+        pip install -r requirements.txt
 
     # Run pylint on the Python script and save the output to a log file
     - name: Run pylint
