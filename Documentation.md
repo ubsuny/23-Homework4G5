@@ -98,3 +98,48 @@ The above result indicates that
 - The summary 3 passed in 0.13s confirms that all 3 tests were successful and they ran in 0.13 seconds.
 
 So, it appears that pytest worked correctly, and all our tests passed successfully.
+
+# Unit Test Result Using pylint
+
+************* Module pytest_matrix_multiply  
+pytest_matrix_multiply.py:30:44: C0303: Trailing whitespace (trailing-whitespace)  
+pytest_matrix_multiply.py:64:0: C0301: Line too long (111/100) (line-too-long)  
+pytest_matrix_multiply.py:97:0: C0305: Trailing newlines (trailing-newlines)  
+pytest_matrix_multiply.py:1:0: C0114: Missing module docstring (missing-module-docstring)  
+pytest_matrix_multiply.py:15:27: C0103: Argument name "A" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:15:30: C0103: Argument name "B" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:15:27: W0621: Redefining name 'A' from outer scope (line 11) (redefined-outer-name)  
+pytest_matrix_multiply.py:15:30: W0621: Redefining name 'B' from outer scope (line 12) (redefined-outer-name)  
+pytest_matrix_multiply.py:26:4: C0103: Variable name "C" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:34:23: C0103: Argument name "A" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:34:26: C0103: Argument name "B" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:34:23: W0621: Redefining name 'A' from outer scope (line 11) (redefined-outer-name)  
+pytest_matrix_multiply.py:34:26: W0621: Redefining name 'B' from outer scope (line 12) (redefined-outer-name)  
+pytest_matrix_multiply.py:48:27: C0103: Argument name "A" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:48:30: C0103: Argument name "B" doesn't conform to snake_case naming style (invalid-name)  
+pytest_matrix_multiply.py:48:27: W0621: Redefining name 'A' from outer scope (line 11) (redefined-outer-name)  
+pytest_matrix_multiply.py:48:30: W0621: Redefining name 'B' from outer scope (line 12) (redefined-outer-name)  
+pytest_matrix_multiply.py:66:0: C0116: Missing function or method docstring (missing-function-docstring)  
+pytest_matrix_multiply.py:70:0: C0116: Missing function or method docstring (missing-function-docstring)  
+pytest_matrix_multiply.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)  
+pytest_matrix_multiply.py:3:0: C0411: standard import "import time" should be placed before "import numpy as np" (wrong-import-order)  
+
+-----------------------------------
+Your code has been rated at 5.12/10
+
+-----------------------------------
+
+The necessary changes are
+- Remove any trailing whitespace.
+- Ensure no lines are longer than 100 characters.
+- Remove any trailing newlines.
+- Add a module docstring.
+- Replace the variable names "A", "B", and "C" with snake_case names.
+- Reorder the imports.
+- Add docstrings to the test functions.
+ 
+ After making these changes, we got
+ 
+------------------------------------
+Your code has been rated at 10.00/10
+
