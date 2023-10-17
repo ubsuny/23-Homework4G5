@@ -1,0 +1,24 @@
+name: Generate Change Log Old to New
+
+on: 
+  push:
+    paths:
+      - '**.py' 
+
+jobs:
+  generate-log:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Compare Files and Save to Log
+      run: |
+        diff old_file.py plot_log_matrix_multiplication.py > changes.log
+
+    - name: Upload changes.log as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: changes-log
+        path: changes.log
