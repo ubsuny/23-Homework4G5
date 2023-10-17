@@ -2,4 +2,3 @@ numpy
 matplotlib
 pytest
 pylint
- run %pip,  do it in the action work flow. 
