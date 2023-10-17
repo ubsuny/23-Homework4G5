@@ -1,4 +1,4 @@
-name: Generate Diff Workflow
+name: Generate Readable Diff Workflow
 
 on: [push]
 
@@ -9,12 +9,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Create a diff file
+    - name: Create a human-readable diff file
       run: |
-        diff old_file.py plot_log_matrix_multiplication.py > changes.diff || true  # We add `|| true` to ensure that the workflow doesn't fail if there's a diff
+        diff -u old_file.py plot_log_matrix_multiplication.py > output.log || true  # We add `|| true` to ensure that the workflow doesn't fail if there's a diff
 
-    - name: Upload changes.diff as artifact
+    - name: Upload output.log as artifact
       uses: actions/upload-artifact@v2
       with:
-        name: code-diff
-        path: changes.diff
+        name: readable-diff
+        path: output.log
