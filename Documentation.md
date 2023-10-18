@@ -177,7 +177,34 @@ The necessary changes are
 ------------------------------------
 Your code has been rated at 10.00/10
 # Changelog.
-Just added changelog to the work flow. Still don't fully understand, but doing this new merge and going to see what changes?.
-Just cheching the changelog results, 
-Checking again, 
+In the new file, no code for unit test is included in the main algorith file. It is done seperatly. 
+The testing time has been changed a bit. The old one was, 
+```
+#testing method 1
+are_equal1 = np.array_equal(matrix_multiply_manual(A, B), expected_product)
+assert are_equal1 == True, "method 1 fails"
 
+#testing method 2
+are_equal2 = np.array_equal(np_matrix_multiply(A, B), expected_product)
+assert are_equal1 == True, "method 2 fails"
+
+#testing method 3
+are_equal3 = np.array_equal(matrix_multiply_einsum(A, B), expected_product)
+assert are_equal1 == True, "method 3 fails"
+```
+While the new one is, 
+```
+with open('execution_times.log', 'w') as log_file:
+    # Measure execution time for each method
+    for method, name in zip(methods, method_names):
+        start_time = time.time()
+        C = method(A, B)
+        end_time = time.time()
+        execution_time = end_time - start_time
+        time_list.append(execution_time)
+        print(f"{name} Execution Time: {execution_time} seconds")  # This line prints the execution time
+        
+        # Write execution time to log file
+        log_file.write(f"{name} Execution Time: {execution_time} seconds\n")
+
+v
