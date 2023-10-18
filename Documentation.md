@@ -178,4 +178,5 @@ The necessary changes are
 Your code has been rated at 10.00/10
 # Changelog.
 Just added changelog to the work flow. Still don't fully understand, but doing this new merge and going to see what changes?.
+Just cheching the changelog results, 
 
