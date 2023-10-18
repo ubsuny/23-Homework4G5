@@ -1,24 +1,24 @@
 # About the github action, We will explain what it is, its part and some results which is required by the HW.
-# Overview
+## Overview
 GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline. You can create workflows that build and test every pull request to your repository, or deploy merged pull requests to production.
 GitHub Actions gives developers the ability to automate their workflows across issues, pull requests, and more—plus native CI/CD functionality. Here’s everything you need to know about Actions including its benefits, how it works, popular use cases, and more.
 
-# The components of GitHub Actions
-# Workflows
+## The components of GitHub Actions
+### Workflows
 To automate development workflows with GitHub Actions, users create definitions using a workflow file, or YAML file, and store these files in the GitHub repository under the .github/workflows directory. A workflow run is triggered three ways: via an external event, a scheduled event, or a GitHub repository event (such as push or pull requests to a GitHub repo or issue creation). 
-# Events
+### Events
 An event is a specific activity in a repository that triggers a workflow run. For example, activity can originate from GitHub when someone creates a pull request, opens an issue, or pushes a commit to a repository. You can also trigger a workflow to run on a schedule, by posting to a REST API, or manually.
-# Jobs
+### Jobs
 A job is a set of steps in a workflow that is executed on the same runner. Each step is either a shell script that will be executed, or an action that will be run. Steps are executed in order and are dependent on each other. Since each step is executed on the same runner, you can share data from one step to another. For example, you can have a step that builds your application followed by a step that tests the application that was built.
 
 You can configure a job's dependencies with other jobs; by default, jobs have no dependencies and run in parallel with each other. When a job takes a dependency on another job, it will wait for the dependent job to complete before it can run. For example, you may have multiple build jobs for different architectures that have no dependencies, and a packaging job that is dependent on those jobs. The build jobs will run in parallel, and when they have all completed successfully, the packaging job will run.
-# Actions
+### Actions
 An action is a custom application for the GitHub Actions platform that performs a complex but frequently repeated task. Use an action to help reduce the amount of repetitive code that you write in your workflow files. An action can pull your git repository from GitHub, set up the correct toolchain for your build environment, or set up the authentication to your cloud provider.
 
 You can write your own actions, or you can find actions to use in your workflows in the GitHub Marketplace.
-# Runners
+### Runners
 A runner is a server that runs your workflows when they're triggered. Each runner can run a single job at a time. GitHub provides Ubuntu Linux, Microsoft Windows, and macOS runners to run your workflows; each workflow run executes in a fresh, newly-provisioned virtual machine. GitHub also offers larger runners, which are available in larger configurations
-# Create an example workflow
+### Create an example workflow
 GitHub Actions uses YAML syntax to define the workflow. Each workflow is stored as a separate YAML file in your code repository, in a directory named .github/workflows.
 You can create an example workflow in your repository that automatically triggers a series of commands whenever code is pushed. In this workflow, GitHub Actions checks out the pushed code, installs the bats testing framework, and runs a basic command to output the bats version: bats -v.
 ---->In your repository, create the .github/workflows/ directory to store your workflow files.
@@ -42,7 +42,7 @@ Your new GitHub Actions workflow file is now installed in your repository and wi
 
 
 ----> Commit these changes and push them to your GitHub repository.
-# The actual workflow.
+### The actual workflow.
 ```
 Algorithm: Run Python Module Tests using GitHub Actions
 
@@ -79,7 +79,7 @@ Algorithm: Run Python Module Tests using GitHub Actions
 
 ```
 
-# Understanding the workflow file
+## Understanding the workflow file
 ```name: learn-github-actions```
 
 Optional - The name of the workflow as it will appear in the "Actions" tab of the GitHub repository. If this field is omitted, the name of the workflow file will be used instead.
@@ -107,12 +107,12 @@ This step uses the actions/setup-node@v3 action to install the specified version
 The run keyword tells the job to execute a command on the runner. In this case, you are using npm to install the bats software testing package.
 ```- run: bats -v```
 Finally, you'll run the bats command with a parameter that outputs the software version.
-# References.
+## References.
 [1] https://assets.ctfassets.net/wfutmusr1t3h/6IyfnYAidl3QUoX2xfGOgI/6aa9e5df02378f952f7c1ba5f42effc9/What-is-GitHub.Actions_.Benefits-and-examples.pdf
 [2] https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks
 [3] https://www.harness.io/blog/github-actions
 [4] https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions#overview
-# Unit Test Result Using pytest
+## Unit Test Result Using pytest
 This part it added by the other contributor in the repository, Thirtha.
 ============================= test session starts ==============================  
           
@@ -133,7 +133,7 @@ The above result indicates that
 
 So, it appears that pytest worked correctly, and all our tests passed successfully.
 
-# Unit Test Result Using pylint
+### Unit Test Result Using pylint
 
 ************* Module pytest_matrix_multiply  
 pytest_matrix_multiply.py:30:44: C0303: Trailing whitespace (trailing-whitespace)  
