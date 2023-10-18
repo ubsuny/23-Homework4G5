@@ -42,8 +42,42 @@ Your new GitHub Actions workflow file is now installed in your repository and wi
 
 
 ----> Commit these changes and push them to your GitHub repository.
+# The actual workflow.
+```
+Algorithm: Run Python Module Tests using GitHub Actions
 
+1. Define the name of the GitHub Actions workflow as "Python Module Test".
 
+2. Specify the triggering events for the workflow:
+   a. When code is pushed to the repository.
+   b. When a pull request is made to the repository.
+
+3. Start defining the jobs for the workflow:
+
+   A. Define a job named "build":
+
+      i. Set the environment for the job to the latest version of Ubuntu.
+
+      ii. Define the sequential steps the job should perform:
+
+          1. Checkout the latest code from the repository to the runner.
+
+          2. Setup Python:
+             a. Specify the version of Python to be 3.8.
+
+          3. Install the necessary dependencies for the project:
+             a. Upgrade the pip package manager to its latest version.
+             b. Install the required packages listed in the 'requirements.txt' file.
+
+          4. Run tests on a specific module:
+             a. Use the pytest testing framework to run tests on the 'test_matrix_multiplication.py' module.
+             b. Save the output of the tests to a log file named 'pytest_module_output.log'.
+
+          5. Upload the results:
+             a. Upload the 'pytest_module_output.log' file as an artifact to GitHub.
+             b. Name the artifact "pytest_output".
+
+```
 
 # Understanding the workflow file
 ```name: learn-github-actions```
